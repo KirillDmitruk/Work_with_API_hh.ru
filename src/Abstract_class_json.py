@@ -6,5 +6,6 @@ class AbstractJson(ABC):
     def read_file(self):
         pass
 
+    @abstractmethod
     def save_file(self, data):
         pass

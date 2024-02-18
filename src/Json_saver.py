@@ -1,5 +1,5 @@
 import json
-from src.config import DATA
+from config import DATA
 from src.Abstract_class_json import AbstractJson
 
 

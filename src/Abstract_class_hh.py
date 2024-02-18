@@ -8,5 +8,6 @@ class Abstract_class_hh(ABC):
         pass
 
     @abstractmethod
-    def get_vacancies_from_hh(self, name_vacancies):
+    def get_vacancies_from_hh(self, name_vacancy):
         pass
+

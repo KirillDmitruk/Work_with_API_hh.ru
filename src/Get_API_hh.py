@@ -1,11 +1,12 @@
 import json
+from abc import ABC
 
 import requests
 
 from src.Abstract_class_hh import Abstract_class_hh
 
 
-class Get_API_hh(Abstract_class_hh):
+class Get_API_hh(Abstract_class_hh, ABC):
 
     def __init__(self):
         """
@@ -25,11 +26,12 @@ class Get_API_hh(Abstract_class_hh):
         Метод получает информацию о вакансиях с помощью API hh.ru.
 
         """
-
         if name_vacancy.isalpha():
-            keys_response = {'text': f'name:Python', 'area': 113, 'per_page': 100, }
+            keys_response = {'text': f'name:{name_vacancy}', 'area': 113, 'per_page': 100, }
             info = requests.get(f'https://api.hh.ru/vacancies', keys_response)
             self.all_vacancy = json.loads(info.text)['items']
             return self.all_vacancy
         else:
             return "Vacancy not found"
+
+
