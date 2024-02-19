@@ -17,15 +17,15 @@ class Vacancy:
                 f"URL: {self.url}\n")
 
     def __lt__(self, other):
-        """Сравнение двух объектов вакансий по диапазону зарплаты.
-        Если диапазон зарплаты другого объекта меньше, чем у текущего,
-        то метод возвращает True."""
         if other.salary_to < self.salary_to:
             return True
 
     @classmethod
     def get_vacancy_list(cls, list_vacancy, city, salary_from) -> list:
-        """Получение списка вакансий из внешнего источника данных"""
+        """
+        Get list with vacancies dicts. This list with copy of class Vacancy
+        :return: new lisrt with copy of class Vacancy
+        """
         for vacancy in list_vacancy:
             name_vacancy = vacancy["name"]
             url = vacancy["alternate_url"]

@@ -1,9 +1,9 @@
-from src.Get_API_hh import Get_API_hh
+from src.Get_API_hh import GetApiHh
 from src.Json_saver import JsonSaver
 from src.Vacancy import Vacancy
 
 
-response = Get_API_hh()
+response = GetApiHh()
 
 while True:
     user_vacancy: str = input("Text name vacancy for search:\n")

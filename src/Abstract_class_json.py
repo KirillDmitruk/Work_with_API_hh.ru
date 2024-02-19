@@ -1,11 +1,12 @@
 from abc import ABC, abstractmethod
 
-class AbstractJson(ABC):
+
+class AbstractJsonSaver(ABC):
 
     @abstractmethod
-    def read_file(self):
+    def save_file(self, data: list):
         pass
 
     @abstractmethod
-    def save_file(self, data):
+    def read_file(self):
         pass

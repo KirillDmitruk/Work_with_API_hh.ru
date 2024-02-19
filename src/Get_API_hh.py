@@ -1,37 +1,26 @@
 import json
-from abc import ABC
 
 import requests
 
-from src.Abstract_class_hh import Abstract_class_hh
+from src.Abstract_class_hh import AbstractGetApiHh
 
 
-class Get_API_hh(Abstract_class_hh, ABC):
+class GetApiHh(AbstractGetApiHh):
 
     def __init__(self):
-        """
-        Создаем пустой список all_vacancy,
-        который будет использоваться для хранения информации о вакансиях.
-        """
         self.all_vacancy = []
 
     def __repr__(self):
-        """
-        Метод возвращает строку, содержащую все вакансии, которые были получены.
-        """
         return f"{self.all_vacancy}"
 
     def get_vacancy_from_api(self, name_vacancy) -> list:
-        """
-        Метод получает информацию о вакансиях с помощью API hh.ru.
+        """Get valid info about vacancies for user"""
 
-        """
         if name_vacancy.isalpha():
-            keys_response = {'text': f'name:{name_vacancy}', 'area': 113, 'per_page': 100, }
+            keys_response = {'text': f'NAME:{name_vacancy}', 'area': 113, 'per_page': 100, }
             info = requests.get(f'https://api.hh.ru/vacancies', keys_response)
             self.all_vacancy = json.loads(info.text)['items']
             return self.all_vacancy
         else:
             return "Vacancy not found"
-
 
