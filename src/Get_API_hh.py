@@ -14,8 +14,7 @@ class GetApiHh(AbstractGetApiHh):
         return f"{self.all_vacancy}"
 
     def get_vacancy_from_api(self, name_vacancy) -> list:
-        """Get valid info about vacancies for user"""
-
+        """Получение информации о вакансиях с помощью API hh.ru."""
         if name_vacancy.isalpha():
             keys_response = {'text': f'NAME:{name_vacancy}', 'area': 113, 'per_page': 100, }
             info = requests.get(f'https://api.hh.ru/vacancies', keys_response)
